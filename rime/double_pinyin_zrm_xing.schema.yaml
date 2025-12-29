@@ -1,0 +1,45 @@
+schema:
+  schema_id: double_pinyin_zrm_xing
+  name: "自然码双拼+形码"
+  version: "1.0"
+
+engine:
+  translators:
+    - table_translator
+
+  translator/dictionary:
+    - flypy_xing
+    - rime_ice
+
+  translator/enable_completion: true
+
+  segmentors:
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+
+  # translators:
+  # - table_translator@translator_one
+  # translator_one:
+  # dictionary: zrm_xing  # 你的自然码形码词库
+  # prism: double_pinyin  # 自然码双拼
+
+  # 形码输入规
+  speller/algebra:
+    # 基本双拼
+    - xform/^zh/v/
+    - xform/^ch/i/
+    - xform/^sh/u/
+    # 允许形码后缀
+    - derive/^([a-z]{2})([a-z]{1,2})$/$1·$2/
+    # 形码反馈显示
+    - xform/([a-z])([a-z])$/$1$2「形」/
+
+  reverse_lookup:
+    dictionary: zrm_xing
+    prefix: "`"
+    tips: "〔自然码-形码拓展〕"
+
+  recognizer/patterns/xing:
+    "^[a-z]{1,4}$": "xingma" # 1-4个字母视为有效编码
