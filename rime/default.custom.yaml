@@ -1,0 +1,12 @@
+patch:
+  schema_list:
+    - schema: double_pinyin
+    - schema: double_pinyin_mspy # backup
+    # - schema: double_pinyin_flypy
+
+
+
+  "translator/comment_format":
+    - "xform/([a-z][a-z])/[$1]/"
+
+  menu/page_size: 9
