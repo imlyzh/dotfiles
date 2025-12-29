@@ -1,14 +1,14 @@
 patch:
-  style/horizontal: true
+  # style/horizontal: true
   style/inline_preedit: true
   style/translucency: true
 
   style/font_face: "LXGW WenKai"
-  style/font_point: 18
-  style/corner_radius: 6
-  style/border_width: 0
-  style/line_spacing: 5
-  style/spacing: 12
+  # style/font_point: 18
+  # style/corner_radius: 6
+  # style/border_width: 0
+  # style/line_spacing: 5
+  # style/spacing: 12
 
   style/color_scheme: "macOS_light"
   style/color_scheme_dark: "macOS_dark"
