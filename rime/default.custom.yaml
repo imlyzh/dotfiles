@@ -4,7 +4,7 @@ patch:
     # - schema: double_pinyin_mspy # backup
     # - schema: double_pinyin_flypy
 
-  menu/page_size: 9
+  menu/page_size: 5
 
   # "switches/@0/reset": 0             # ASCII 模式 (0表示中文)
   "switches/@1/reset": 1             # 简繁转换 (在 rime-ice 中 1 通常对应简体)
@@ -13,6 +13,12 @@ patch:
     - "xform/([a-z][a-z])/[$1]/"
 
   "double_pinyin/engine/filters/@next": lua_filter@reverse_lookup_filter
+  "double_pinyin/engine/translators/@next": table_translator@reverse_lookup
   "double_pinyin/reverse_lookup/dictionary": rime_ice.8105
+  "double_pinyin/reverse_lookup":
+    dictionary: rime_ice.8105
+    tips: "〔笔画/部首〕"
+    preedit_format:
+      - xform/^u//
   "double_pinyin/translator/comment_format":
     - "xform/([a-z][a-z])/[$1]/"
