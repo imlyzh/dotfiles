@@ -1,22 +1,37 @@
 patch:
-  # style/color_scheme: macos_native
-  style/horizontal: true
-  style/font_face: "LXGW WenKai" # native "PingFang SC"
-  style/font_point: 18 # native 16
-  style/corner_radius: 5 # 6
+  # --- 界面布局 ---
+  style/horizontal: true             # 横排
+  style/inline_preedit: true         # 拼音嵌入 App
+  style/translucency: true           # 毛玻璃效果
+
+  # --- 字体与大小 ---
+  style/font_face: "LXGW WenKai"     # 确保系统已安装该字体
+  style/font_point: 18
+  style/corner_radius: 5
   style/border_width: 0
   style/line_spacing: 5
   style/spacing: 12
 
-  style/translucency: true
-  style/inline_preedit: true
+  # --- 明暗跟随系统 ---
+  # 当 macOS 处于浅色模式时使用的皮肤名
+  style/color_scheme: "macOS_light"
+  # style/color_scheme: "macos_native"
+  # 当 macOS 处于深色模式时使用的皮肤名
+  style/color_scheme_dark: "macos_dark"
 
-  # preset_color_schemes:
-  #   macos_native:
-  #     name: "仿原生"
-  #     author: "Lyzh"
-  #     back_color: 0xFFFFFF          # 纯白背景
-  #     text_color: 0x000000          # 黑色文字
-  #     hilited_text_color: 0x000000  # 选中文字颜色
-  #     hilited_back_color: 0xEEE8D5  # 选中背景（淡淡的蓝色或灰色，模仿原生）
-  #     comment_text_color: 0x999999  # 偏旁编码显示为淡灰色（核心记忆区）
+  # --- 定义皮肤细节 ---
+  preset_color_schemes:
+    macos_native:
+      name: "原生浅色"
+      back_color: 0xFFFFFF
+      text_color: 0x000000
+      hilited_text_color: 0x000000
+      hilited_back_color: 0xE8E8E8
+      comment_text_color: 0x999999    # 偏旁编码设为淡灰色，低调但可见
+    macos_dark:
+      name: "原生深色"
+      back_color: 0x252525
+      text_color: 0xFFFFFF
+      hilited_text_color: 0xFFFFFF
+      hilited_back_color: 0x444444
+      comment_text_color: 0x888888
