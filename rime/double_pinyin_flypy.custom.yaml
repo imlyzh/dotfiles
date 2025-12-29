@@ -1,0 +1,23 @@
+patch:
+  # 1. 添加形码字典
+  translator/dictionary: flypy
+
+  # 2. 设置prism为小鹤音形方案
+  translator/prism: double_pinyin_flypy
+
+  # 3. 如果需要保留雾凇词库，可以添加（通常不需要，因为flypy字典已包含）
+  # translator/dictionary/@next: rime_ice
+
+  # 4. 可选：调整候选排序，让完全匹配编码的候选词优先
+  translator/enable_completion: false
+  translator/strict_spelling: true
+
+  # 5. 可选：设置简化四码自动上屏
+  speller/auto_select: true
+  speller/auto_select_unique_candidate: true
+
+  # 6. 可选：设置四码自动上屏
+  speller/max_code_length: 4
+  speller/auto_clear: 4
+
+  recognizer/patterns/reverse_lookup: "^`.*$"
