@@ -5,7 +5,7 @@ patch:
 
   style/font_face: "LXGW WenKai"
   style/font_point: 18
-  style/corner_radius: 5
+  style/corner_radius: 6
   style/border_width: 0
   style/line_spacing: 5
   style/spacing: 12
